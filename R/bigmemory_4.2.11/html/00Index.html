@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Manage massive matrices with shared memory and memory-mapped
+files</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> Manage massive matrices with shared memory and memory-mapped
+files
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;bigmemory&rsquo; version 4.2.11</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">Overview of user guides and package vignettes</a>; browse <a href="../doc">directory</a>.</li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td width="25%"><a href="bigmemory-package.html">bigmemory-package</a></td>
+<td>Manage massive matrices with shared memory and memory-mapped files.</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">as.big.matrix</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="as.big.matrix-methods.html">as.big.matrix-method</a></td>
+<td>Create a "big.matrix" from a matrix or vector.</td></tr>
+<tr><td width="25%"><a href="as.big.matrix-methods.html">as.big.matrix-methods</a></td>
+<td>Create a "big.matrix" from a matrix or vector.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">as.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="attach.big.matrix.html">attach.big.matrix</a></td>
+<td>The basic "big.matrix" operations for sharing and re-attaching.</td></tr>
+<tr><td width="25%"><a href="attach.big.matrix.html">attach.resource</a></td>
+<td>The basic "big.matrix" operations for sharing and re-attaching.</td></tr>
+<tr><td width="25%"><a href="big.matrix.descriptor-class.html">attach.resource-method</a></td>
+<td>Class "big.matrix.descriptor"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">big.matrix</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">big.matrix-class</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.descriptor-class.html">big.matrix.descriptor-class</a></td>
+<td>Class "big.matrix.descriptor"</td></tr>
+<tr><td width="25%"><a href="bigmemory-package.html">bigmemory</a></td>
+<td>Manage massive matrices with shared memory and memory-mapped files.</td></tr>
+<tr><td width="25%"><a href="deepcopy.html">deepcopy</a></td>
+<td>Produces a physical copy of a "big.matrix"</td></tr>
+<tr><td width="25%"><a href="attach.big.matrix.html">describe</a></td>
+<td>The basic "big.matrix" operations for sharing and re-attaching.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">describe-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.descriptor-class.html">descriptor-class</a></td>
+<td>Class "big.matrix.descriptor"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">dim-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">dimnames-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">dimnames&lt;--method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">filebacked.big.matrix</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="flush.html">flush</a></td>
+<td>Updating a big.matrix filebacking.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">flush-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">head-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">is.big.matrix</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">is.big.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">is.filebacked</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">is.filebacked-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">is.nil</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">is.separated</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">is.separated-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">is.shared</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">is.shared-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="sub.big.matrix.html">is.sub.big.matrix</a></td>
+<td>Submatrix support.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">is.sub.big.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">length-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="morder.html">morder</a></td>
+<td>Ordering and row-permuting functions for "big.matrix" and "matrix" objects</td></tr>
+<tr><td width="25%"><a href="morder.html">mpermute</a></td>
+<td>Ordering and row-permuting functions for "big.matrix" and "matrix" objects</td></tr>
+<tr><td width="25%"><a href="mwhich.html">mwhich</a></td>
+<td>Expanded "which"-like functionality.</td></tr>
+<tr><td width="25%"><a href="mwhich-methods.html">mwhich-method</a></td>
+<td>Expanded "which"-like functionality.</td></tr>
+<tr><td width="25%"><a href="mwhich-methods.html">mwhich-methods</a></td>
+<td>Expanded "which"-like functionality.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">ncol-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">nrow-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">print-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="write.big.matrix.html">read.big.matrix</a></td>
+<td>File interface for a "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">read.big.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="sub.big.matrix.html">sub.big.matrix</a></td>
+<td>Submatrix support.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">sub.big.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.descriptor-class.html">sub.big.matrix-method</a></td>
+<td>Class "big.matrix.descriptor"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">tail-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">typeof-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="write.big.matrix.html">write.big.matrix</a></td>
+<td>File interface for a "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">write.big.matrix-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">[-method</a></td>
+<td>Class "big.matrix"</td></tr>
+<tr><td width="25%"><a href="big.matrix.html">[.big.matrix</a></td>
+<td>The core "big.matrix" operations.</td></tr>
+<tr><td width="25%"><a href="big.matrix-class.html">[&lt;--method</a></td>
+<td>Class "big.matrix"</td></tr>
+</table>
+</body></html>

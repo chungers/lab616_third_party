@@ -1,0 +1,17 @@
+as.big.matrix-methods   Create a "big.matrix" from a matrix or vector.
+big.matrix              The core "big.matrix" operations.
+big.matrix-class        Class "big.matrix"
+big.matrix.descriptor-class
+                        Class "big.matrix.descriptor"
+bigmemory-package       Manage massive matrices with shared memory and
+                        memory-mapped files.
+deepcopy                Produces a physical copy of a "big.matrix"
+describe                The basic "big.matrix" operations for sharing
+                        and re-attaching.
+flush                   Updating a big.matrix filebacking.
+morder                  Ordering and row-permuting functions for
+                        "big.matrix" and "matrix" objects
+mwhich                  Expanded "which"-like functionality.
+mwhich-methods          Expanded "which"-like functionality.
+sub.big.matrix          Submatrix support.
+write.big.matrix        File interface for a "big.matrix"
