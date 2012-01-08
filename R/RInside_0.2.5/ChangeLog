@@ -1,0 +1,417 @@
+2011-12-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp: Applied (a slightly simpler versions of) a patch
+	by James Bates which restores RInside on Windows -- at long last!
+
+	* inst/include/RInsideCommon.h: Define #Win32 in #WIN32 is set so
+	that we get some symbols from Rembedded.h
+
+	* inst/THANKS: Add James Bates for help with RInside on Windows
+	
+	* doxyfile: Add inst/examples/wt to example path
+
+	* cleanup: Some fixes ensuring qt and wt example can be cleaned
+	
+	* .Rbuildignore: Add some local files from qt and wt examples
+
+2011-12-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/wt/wtdensity.cpp: bandwidth value capped at 200 like qt
+
+	* inst/examples/qt/qtdensity.cpp: Default to svg creation via the
+	svg() now in base R, ie remove both the test for cairoDevice and the
+	fallback use of png graphics code; we still need to filter the svg file
+	* inst/examples/qt/qtdensity.h: adjust accordingly
+
+	* cleanup: Clean qt and wt example directories too
+
+2011-11-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/wt: New example directory 'wt' providing a Webtoolkit
+	(aka 'witty') based density slider application
+	* inst/examples/wt/wtdensity.cpp: Application in less than 200 lines
+	* inst/examples/wt/Makefile: Makefile to build and launch (on Ubuntu)
+
+2011-11-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/qtdensity.pro: Use QMAKE_LIBS, not QMAKE_LFLAGS
+
+2011-04-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Release 0.2.4
+
+	* doxyfile: Updated path settings
+
+2011-04-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/mpi/*cpp: Minor updates and simplifications
+
+2011-04-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Updated Description, also state current Windows
+	run-time issue more prominently
+
+ 	* inst/examples/standard/rinside_sample1.cpp: Minor simplification
+	* inst/examples/standard/rinside_sample2.cpp: Idem
+	* inst/examples/standard/rinside_sample3.cpp: Idem
+	* inst/examples/standard/rinside_sample5.cpp: Idem
+	* inst/examples/standard/rinside_sample7.cpp: Idem
+
+2011-04-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/NEWS: Added, at long last, with backfills based on the
+	ChangeLog and blog postings
+
+	* R/RInsidePaths.R (RInsideCxxFlags): Do not use quotes around path
+
+2011-04-03  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/: Moved merged SVN+PNG files back into top-level
+
+	* inst/examples/qt/qtdensitySVG/qtdensity.pro: No longer need to set
+	-Wno-unused-parameter as Rcpp 0.9.3 has a fix
+
+2011-04-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/qtdensitySVG/qtdensity.cpp: Merged the PNG and SVG
+	version by using a boolean based on whether cairoDevice loaded or not
+
+2011-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/: Split qtdensity example into default (png) and
+	svg variants as svg needs cairoDevice and has a clipping bug
+
+2011-03-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/qtdensity.h: Small rearrangements and
+	simplifications
+
+2011-03-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/qt/*: Added new example combining RInside with Qt
+	illustrating the standard 'slider to select bandwidth for density
+	estimate' example found in demo(tkdensity) and other places
+
+2011-03-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/standard/rinside_sample11.cpp: New example in
+	response to r-help question by Paul Smith
+
+2011-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/standard/rinside_sample6.cpp: Updated to
+	direct `R["a"] = a;' assignments
+
+2011-01-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/standard/rinside_sample10.cpp: New example in
+	response to r-devel question by Wayne Zhang
+
+2011-01-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp (initialize): Assign results of Rf_install to avoid
+	any risk of garbage collection -- with thanks to Doug and Luke
+
+2010-12-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp (initialize): If Rcpp is requested, load it
+	explicitly before we call autoload() for all R default packages
+	(with thanks to Murray Stokely for the patch)
+
+	* Changelog: Moved up from inst/ for easier C-x 4 a use
+
+2010-08-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* Release 0.2.3
+
+	* src/Makevars: Set emacs header for Makefile mode
+	* src/Makevars.win: Set emacs header for Makefile mode
+
+2010-07-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/RInside.h: New argument to constructor to select
+	loading of Rcpp
+	* src/RInside.cpp: Idem, also load Rcpp more quietly
+
+2010-07-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/standard/rinside_sample3.rcpp: Simpler with new Rcpp API
+	* inst/examples/standard/rinside_sample4.rcpp: Idem
+
+2010-06-16  Romain Francois <romain@r-enthusiasts.com>
+
+	* inst/examples/standard/rinside_sample9.cpp: new example illustrating
+	how to expose a C++ function to the embedded R
+
+	* inst/examples/standard/rinside_module_sample0.cpp: new example illustrating
+	how to use an Rcpp module from RInside
+
+	* inst/include/*.h: moved the headers to include so that there is only one copy
+
+	* inst/include/MemBuf.h: change from signature of add to use
+	const std::string& instead of const char*
+
+	* src/RInside.cpp: loading the Rcpp package
+
+2010-04-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/MemBuf.cpp: Added #include <string.h> so that even Solaris sees
+	  strlen() -- with thanks to Brian Ripley
+
+	* src/Makefile: Remove -Wall option which Solaris cc does not
+	  support -- with thanks to Brian Ripley
+
+2010-04-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp: Add #ifdef to Callback code to break on Windows
+
+2010-03-26  Romain Francois <romain@r-enthusiasts.com>
+
+	* src/RInside.h: the Proxy class is moved inside RInside and
+  	  parseEval now returns a Proxy so that the proxy class does its job
+	  implicitely
+
+	* inst/examples/standard/rinside_sample8.cpp: simplify the example to
+	  implicit use of the Proxy class
+
+2010-03-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.h: New Proxy class with operator T() to borrow
+	  Rcpp's automatic wrappers
+	* inst/examples/standard/rinside_sample8.cpp: Use Proxy()
+
+2010-03-22  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Increase Version: to 0.2.2
+
+	* .Rbuildignore: Added to exclude volatile Doxygen-generated docs
+	  from tarball, zip-archives will be made available as for Rcpp
+
+2010-03-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/RInsidePaths.R: Updated to current version of Rcpp's file (minus
+	  the cxx0x bits) in order to standardize linking options, with this
+	  we now default to static linking on OS X and Windows as Rcpp does.
+
+	* src/RInside.cpp: Use explicit std::string() constructors for all
+	  text arguments inside throw() calls (to satisfy the Windows compiler)
+
+2010-03-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.{h,cpp}: parseEval* function changed slightly so that
+	  SEXP parseEval(string) is now preferred, and it as well as
+	  void parseEvalQ(string) now throw exceptions; they call the
+	  non-throwing older int parseEval(string, SEXP). We changed the
+	  parseEvalQ from int to void which is more in-line with it purpose.
+	* inst/examples/standard/rinside_sample{2,4,5}.cpp: Adapted
+	  accordingly, mostly by removing no-longer-needed error checking
+	  and exepction throw which has now move 'up' into RInside.cpp
+
+2010-02-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/mpi/: Added two variants using the C++ API to MPI
+
+2010-02-23  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp: Add new parseEval() member function returning a SEXP
+	* src/RInside.h: idem
+
+	* src/inst/examples/standard/rinside_sample8.cpp: Show new parseEval()
+
+2010-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/mpi/: Add examples contributed by Jianping Hua
+	* inst/examples/: Update two existing examples to new Rcpp API
+
+2010-02-12  Romain Francois <romain@r-enthusiasts.com>
+
+	* src/MemBuf.h: MemBuf simplified using std::string
+
+	* src/RInside.h: RInside gains an operator[](string) to allow
+	  treating the RInside instance as a proxy to the global environment
+	  so that we can do: RInside R; R["x"] = 10 ; All the actual work
+	  is done by the Rcpp::Environment class
+
+2010-02-04  Romain Francois <francoisromain@free.fr>
+
+	* RInside::autoloads revisited with the new Rcpp api
+
+	* RInside gains a default constructor to be used when there
+	  is no command line arguments
+
+2010-01-28  Romain Francois <francoisromain@free.fr>
+
+	* src/RInside.{h,cpp}: Retire assign(vector<vector<double>> )
+	  because now this can be taken care of by template specialization
+
+	* DESCRIPTION: require Rcpp 0.7.3.6
+
+2010-01-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.{h,cpp}: Restore assign(vector<vector<double>>) which
+	  is not (yet?) covered by the more general templated solution
+
+	* src/RInside.h: Minor cleanup regarding logTxt usage
+
+	* src/Makefile: Make sure we find Rcpp.h headers
+
+2010-01-27  Romain Francois <francoisromain@free.fr>
+
+	* src/RInside.{h,cpp}: include Rcpp.h and use the Rf_ prefixed R API
+	  functions. stop using macros from Rdefines because they don't
+	  work with R_NOREMAP
+
+	* src/RInside.{h,cpp}: using the new Rcpp API assign becomes
+	  a template and let Rcpp::Environment.assign deal with the type
+	  of the object and how to wrap it. specializations of wrap
+	  for vector<vector<int>> and vector<vector<double>> are created
+	  to maintain original interface.
+
+2010-01-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Increase Version: to 0.2.1
+
+	* src/RInside.cpp: Change startup so that interactive() comes out FALSE,
+	  with that no longer call Rf_KillAllDevices(); as we may not have
+	  had devices in the first place.
+
+	* src/RInside.h: Logging helper protected by #ifndef as it is in Rcpp too
+
+	* tools/unix2dos.r: Simple CRLF -> LF filter to nuke a Windows warning
+	* src/Makefile.win: Employ unix2dos.r on two autogenerated files
+
+	* DESCRIPTON: Set Depends: to R (>= 2.10.0) and Rcpp (>= 0.7.0)
+
+	* src/*: Add full copyright headers and update copyright to 2010
+
+2009-12-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/setenv.c: Minor error case fix for Windows
+	* DESCRIPTON: Lower requirement for Rcpp to (>= 0.6.7)
+
+2009-12-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Increase Version: to 0.2.0
+
+	* src/setenv: Another small cleanup
+	* inst/THANKS: Added Richard for all the initial help with Windows
+
+	* src/RInside.cpp: Uncommented fpu_setup() for now
+
+	* inst/doc/{html,man.latex}: Removed autogenerated doxygen files from
+	  svn as they are too volatile, will remain in tarball as for Rcpp
+
+2009-12-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/tools/RInsideEnvVars.r: Deal with slashed on Windows platform
+
+2009-12-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Remove 'OS_type: unix' as we now build and run on Windoze
+	* src/Makefile.win: src/RInside.h, src/RInside.cpp: Added support for
+	  building on Windows using the standard MinGW toolchain
+	* src/setenv.c: Windows implementation of setenv() kindly provided by
+	  Richard Holbrey during earlier attempts to build on Windows
+        * inst/examples/Makefile.win: Similarly Makefile for Windows examples
+
+2009-12-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp: Destructor does a few additional things as per the
+	  R_Cleanup example in section 8.1.2 on 'Setting R callbacks'
+	* src/RIinside.h: Added simple logTxt() to log if defined and not otherwise.
+
+2009-10-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/rinside_sample5.cpp: Another examples based on r-devel post
+
+2009-09-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/rinside_sample4.cpp: New example based on new r-devel post
+
+2009-09-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Increase Version: to 0.1.1
+
+	* inst/THANKS: Added new file to say Thank You! to contributors
+
+	* inst/examples/Makefile: set R_HOME variable to output of 'R RHOME',
+	  use R_HOME to call R as R_HOME/bin/R, use R instead of Rscript,
+	  query R about CXX and CPPFLAGS, general editing and overhaul
+
+	* inst/examples/*.cpp: More consistent formatting using Emacs 'M-x untabify'
+
+	* src/Makefile: Add $R_ARCH to install path for header files (thanks to
+	  Jeff), call R with --vanilla switch (thanks to Jan), use R instead
+	  of Rscript, general editing and overhaul
+
+2009-09-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Increase Version: to 0.1.0, initial CRAN release
+
+	* DESCRIPTION: Add 'OS_type: unix' to stop builds on Windows
+
+	* DESCRIPTION: Add 'URL' pointer
+
+	* doxyfile: Added Doxygen configuration file
+	* inst/doc/: Added Doxygen generated html, latex, man files
+
+	* inst/examples/Makefile: Also link against BLAS and LAPACK libs
+	* inst/examples/rinside_sample3.cpp: New example using lm() and coef()
+
+	* inst/examples/rinside_sample2.cpp: Added a try/catch block
+
+	* src/Makefile: use $(R_HOME)/bin/R as per Kurt's reminder
+
+2009-09-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/Makefile: Enhanced to now automatically regenerate the two
+	  R-derived header files, and to also query R for directories which
+	  should make the build more portable across different systems
+
+	* src/MemBuf/cpp: Switch error message from fprintf to std::cerr
+	  to avoid unncessary trouble with g++-4.4, with thanks to
+	  Michael Kane for the heads-up
+
+	* R/RInsidePaths.R: Added path helper functions called by Makefiles
+	* NAMESPACE: Added (empty) file so we can call 'path helpers'
+
+	* inst/examples/Makefile: Rewritten to no longer used fixed path
+	  settings but rather query R, Rcpp and RInside
+
+2009-07-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/rinside_sample2.cpp: Another simple example inspired
+	  by a long thread on r-devel
+
+2009-07-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/RInside.cpp: Added patch by Daniel F Schwarz to not set env
+ 	  vars with prior values (to e.g. allow non-standard R_HOME)
+
+2009-07-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Release 0.0.2
+
+	* src/MemBuf.cpp: Added one-line patch by Miguel Lechón in add()
+	  method to correctly re-set pointer---with a bug Thanks! to Miguel
+
+	* src/RInside.cpp: Added a few more assign() functions for STL
+	  vectors of types double, int and string, as well as int matrices
+	* src/RInside.*: Minor cleanups and edits
+
+	* inst/examples/small_test*.cpp: Added two small examples to
+	  illustrate and test the bug reported by Miguel Lechón
+	* inst/examples/Makefile: generalised targets
+
+2009-02-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/: Added new assign() method for strings, added 'quiet' Eval
+ 	  without return; made more function interfaces use references
+
+	* man/: Added less-than-minimal RInside-package.Rd
+
+	* inst/rinside_sample0: Added simple Hello World example
+
+2009-02-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* Initial upload of version '0.0.1' to R-Forge SVN
