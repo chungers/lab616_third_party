@@ -49,7 +49,7 @@ _genfiles/
 # Generated code #
 ##################
 #*.pb.h
-*.pb.cc
+#*.pb.cc
 
 # Compiled source #
 ###################
