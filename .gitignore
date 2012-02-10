@@ -48,7 +48,7 @@ _genfiles/
 
 # Generated code #
 ##################
-*.pb.h
+#*.pb.h
 *.pb.cc
 
 # Compiled source #
