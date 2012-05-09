@@ -36,10 +36,10 @@ gmon.out
 
 # CMake Runtime #
 #################
-CMakeFiles/
-CMakeCache.txt
-Makefile
-*.cmake
+#CMakeFiles/
+#CMakeCache.txt
+#Makefile
+#*.cmake
 
 # Custom CMake Build #
 ######################
@@ -48,8 +48,8 @@ _genfiles/
 
 # Generated code #
 ##################
-*.pb.h
-*.pb.cc
+#*.pb.h
+#*.pb.cc
 
 # Compiled source #
 ###################
